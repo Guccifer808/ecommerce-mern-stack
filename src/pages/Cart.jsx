@@ -3,11 +3,13 @@ import Announcement from './../components/Announcement';
 import Footer from './../components/Footer';
 import styled from 'styled-components';
 import { Add, Remove } from '@material-ui/icons';
+import { mobile } from './../responsive';
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
+  ${mobile({ padding: 10 })}
 `;
 
 const Title = styled.h1`
@@ -22,7 +24,9 @@ const Top = styled.div`
   padding: 20px;
 `;
 
-const TopInfo = styled.div``;
+const TopInfo = styled.div`
+  ${mobile({ display: 'none' })}
+`;
 const TopText = styled.span`
   margin: 0 10px;
   text-decoration: underline;
@@ -42,6 +46,7 @@ const TopButton = styled.button`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: 'column' })}
 `;
 const ProductInfo = styled.div`
   flex: 3;
@@ -50,6 +55,7 @@ const ProductInfo = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: 'column' })}
 `;
 const ProductDetails = styled.div`
   flex: 2;
@@ -93,10 +99,12 @@ const ProductAmount = styled.div`
   font-size: 20px;
   margin: 5px;
   font-weight: 500;
+  ${mobile({ margin: '5px 15px' })}
 `;
 const ProductPrice = styled.div`
   font-size: 24px;
   font-weight: 500;
+  ${mobile({ marginBottom: 20 })}
 `;
 const Hr = styled.hr`
   background-color: #eee;
