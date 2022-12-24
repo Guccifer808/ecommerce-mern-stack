@@ -1,7 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons';
+import { useState } from 'react';
 import styled from 'styled-components';
-import img from '../assets/Hero1.png';
-
+import { sliderItems } from '../data';
 //Styled Components
 const Container = styled.div`
   width: 100%;
@@ -31,16 +31,23 @@ const Arrow = styled.div`
     background-color: #0000008a;
   }
   cursor: pointer;
+  ${'' /* Slider arrow func */}
+  z-index: 2;
 `;
 const Wrapper = styled.div`
   height: 100%;
+  display: flex;
+  ${'' /* Slides transform -100vw for each slide */}
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
+  transition: all 1.5s ease;
 `;
 const Slides = styled.div`
   display: flex;
   align-items: center;
-  width: 98vw;
+  width: 100vw;
   ${'' /* was 100vw on desktop dev */}
   height: 100vh;
+  background-color: #${(props) => props.bg};
 `;
 const ImgContainer = styled.div`
   flex: 1;
@@ -77,27 +84,36 @@ const Button = styled.button`
   }
 `;
 const Slider = () => {
+  //Slider arrow func
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleClick = (direction) => {
+    if (direction === 'left') {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+    }
+  };
   return (
     <Container>
       <Arrow direction='left'>
-        <ArrowLeftOutlined />
+        <ArrowLeftOutlined onClick={() => handleClick('left')} />
       </Arrow>
-      <Wrapper>
-        <Slides>
-          <ImgContainer>
-            <Img src={img} />
-          </ImgContainer>
-          <InfoContainer>
-            <Title>SUMMER SALE</Title>
-            <Description>
-              GET STYLISH WITH US! 30% OFF FOR NEW ARRIVALS
-            </Description>
-            <Button>SHOP NOW</Button>
-          </InfoContainer>
-        </Slides>
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((item) => (
+          <Slides bg={item.bg}>
+            <ImgContainer>
+              <Img src={item.img} />
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title>
+              <Description>{item.description}</Description>
+              <Button>SHOP NOW</Button>
+            </InfoContainer>
+          </Slides>
+        ))}
       </Wrapper>
       <Arrow direction='right'>
-        <ArrowRightOutlined />
+        <ArrowRightOutlined onClick={() => handleClick('right')} />
       </Arrow>
     </Container>
   );
