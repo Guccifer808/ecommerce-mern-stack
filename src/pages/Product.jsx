@@ -1,3 +1,4 @@
+import { Add, Remove } from '@material-ui/icons';
 import styled from 'styled-components';
 import Announcement from '../components/Announcement';
 import Footer from '../components/Footer';
@@ -68,6 +69,42 @@ const FilterSize = styled.select`
 const FilterSizeOption = styled.option`
   font-size: 14px;
 `;
+const AddContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+`;
+
+const AmountContainer = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+`;
+
+const Amount = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid #0288d1;
+`;
+
+const Button = styled.button`
+  padding: 15px;
+  border: 2px solid #0288d1;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 700;
+  &:hover {
+    background-color: #0288d1;
+    color: white;
+    transition: 0.5s;
+  }
+`;
 
 const Product = () => {
   return (
@@ -79,14 +116,14 @@ const Product = () => {
           <Image src='https://www.versace.com/dw/image/v2/ABAO_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dw299852d6/original/90_1008608-1A05765_1D520_20_BaroccoSilhouetteDenimShirt-Shirts-versace-online-store_0_1.jpg?sw=1440&sh=2000&sm=fit&sfrm=jpg' />
         </ImgContainer>
         <InfoContainer>
-          <Title>LETTERMAN JACKET</Title>
+          <Title>DENIM SHIRT</Title>
           <Description>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
             minima, omnis nobis hic aperiam enim sunt! Nesciunt nobis
             voluptatibus cupiditate voluptatum, soluta quos perferendis
             deserunt.
           </Description>
-          <Price>$ 1,200</Price>
+          <Price>$ 200</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color </FilterTitle>
@@ -107,6 +144,14 @@ const Product = () => {
               </FilterSize>
             </Filter>
           </FilterContainer>
+          <AddContainer>
+            <AmountContainer>
+              <Remove />
+              <Amount>1</Amount>
+              <Add />
+            </AmountContainer>
+            <Button>ADD TO CART</Button>
+          </AddContainer>
         </InfoContainer>
       </Wrapper>
       <Newsletter />
