@@ -7,6 +7,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  overflow: hidden;
   position: relative;
 `;
 const Arrow = styled.div`
@@ -56,7 +57,6 @@ const ImgContainer = styled.div`
 
 const Img = styled.img`
   height: 80%;
-  padding-left: 25px;
 `;
 const InfoContainer = styled.div`
   flex: 1;
@@ -93,27 +93,28 @@ const Slider = () => {
       setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
+
   return (
     <Container>
-      <Arrow direction='left'>
-        <ArrowLeftOutlined onClick={() => handleClick('left')} />
+      <Arrow direction='left' onClick={() => handleClick('left')}>
+        <ArrowLeftOutlined />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
-          <Slides bg={item.bg}>
+          <Slides bg={item.bg} key={item.id}>
             <ImgContainer>
               <Img src={item.img} />
             </ImgContainer>
             <InfoContainer>
               <Title>{item.title}</Title>
               <Description>{item.description}</Description>
-              <Button>SHOP NOW</Button>
+              <Button>SHOW NOW</Button>
             </InfoContainer>
           </Slides>
         ))}
       </Wrapper>
-      <Arrow direction='right'>
-        <ArrowRightOutlined onClick={() => handleClick('right')} />
+      <Arrow direction='right' onClick={() => handleClick('right')}>
+        <ArrowRightOutlined />
       </Arrow>
     </Container>
   );
