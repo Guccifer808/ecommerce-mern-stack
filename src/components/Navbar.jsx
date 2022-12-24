@@ -32,6 +32,10 @@ const Search = styled.div`
 `;
 const Input = styled.input`
   border: none;
+  &:hover,
+  &:focus {
+    outline: none;
+  }
 `;
 //Middle side of the container
 const Middle = styled.div`
@@ -55,6 +59,7 @@ const MenuItem = styled.div`
   cursor: <p></p>;
   margin-left: 25px;
 `;
+
 const Navbar = () => {
   return (
     <Container>
@@ -62,15 +67,18 @@ const Navbar = () => {
         <Left>
           <Languages>EN</Languages>
           <Search>
-            <Input /> <SearchIcon style={{ color: 'gray', fontSize: 18 }} />
+            <Input />
+            <SearchIcon
+              style={{ color: 'gray', fontSize: 18, cursor: 'pointer' }}
+            />
           </Search>
         </Left>
         <Middle>
-          <Logo>SHOPUA</Logo>
+          <Logo>SHOP.</Logo>
         </Middle>
         <Right>
-          <MenuItem>REG</MenuItem>
-          <MenuItem>S in</MenuItem>
+          <MenuItem>Register</MenuItem>
+          <MenuItem>Sign in</MenuItem>
           <MenuItem>
             <Badge color='info' variant='dot'>
               <ShoppingBasketOutlinedIcon color='action' />

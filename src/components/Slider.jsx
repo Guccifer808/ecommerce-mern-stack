@@ -1,6 +1,6 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons';
 import styled from 'styled-components';
-// import img from '../assets/Hero1.png';
+import img from '../assets/Hero1.png';
 
 //Styled Components
 const Container = styled.div`
@@ -15,7 +15,8 @@ const Arrow = styled.div`
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: #f8f8f8;
+  color: white;
+  background-color: #0000008a;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -25,7 +26,9 @@ const Arrow = styled.div`
   right: ${(props) => props.direction === 'right' && '10px'};
   &:hover,
   &:focus {
-    opacity: 0.8;
+    opacity: 0.75;
+    color: white;
+    background-color: #0000008a;
   }
   cursor: pointer;
 `;
@@ -33,10 +36,11 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 const Slides = styled.div`
-display: flex
-align-items: center;
-width: 100vw;
-height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 98vw;
+  ${'' /* was 100vw on desktop dev */}
+  height: 100vh;
 `;
 const ImgContainer = styled.div`
   flex: 1;
@@ -44,11 +48,11 @@ const ImgContainer = styled.div`
 `;
 
 const Img = styled.img`
-  height: 60%;
+  height: 80%;
+  padding-left: 25px;
 `;
 const InfoContainer = styled.div`
   flex: 1;
-
   padding: 50px;
 `;
 
@@ -63,10 +67,14 @@ const Description = styled.p`
 `;
 
 const Button = styled.button`
-padding: 10px
-font-size: 20px;
-background-color: transparent;
-cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    border: 2px solid #0288d1;
+  }
 `;
 const Slider = () => {
   return (
@@ -77,12 +85,12 @@ const Slider = () => {
       <Wrapper>
         <Slides>
           <ImgContainer>
-            <Img src='' />
+            <Img src={img} />
           </ImgContainer>
           <InfoContainer>
             <Title>SUMMER SALE</Title>
             <Description>
-              GET STYLISH WITH US! GET 30% OFF FOR NEW ARRIVALS
+              GET STYLISH WITH US! 30% OFF FOR NEW ARRIVALS
             </Description>
             <Button>SHOP NOW</Button>
           </InfoContainer>
