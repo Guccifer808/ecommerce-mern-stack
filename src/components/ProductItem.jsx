@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { mobile } from './../responsive';
 
 const Info = styled.div`
   opacity: 0;
@@ -33,6 +34,7 @@ const Container = styled.div`
   &:hover ${Info} {
     opacity: 1;
   }
+  ${mobile({ margin: '5px 0' })}
 `;
 
 const Circle = styled.div`

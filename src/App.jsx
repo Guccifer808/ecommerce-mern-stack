@@ -1,4 +1,4 @@
-// import Home from './pages/Home';
+import Home from './pages/Home';
 // import ProductList from './pages/ProductList';
 // import Product from './pages/Product';
 // import RegisterPage from './pages/RegisterPage';
@@ -6,12 +6,12 @@
 import Cart from './pages/Cart';
 
 function App() {
-  // return <Home />;
+  return <Home />;
   // return <ProductList />;
   // return <Product />;
   // return <RegisterPage />;
   // return <LoginPage />;
-  return <Cart />;
+  // return <Cart />;
 }
 
 export default App;
