@@ -21,7 +21,8 @@ const Left = styled.div`
 `;
 const Languages = styled.span`
   font-size: 14;
-  cursor: pointer;s
+  cursor: pointer;
+  font-weight: 500;
 `;
 const Search = styled.div`
   border: 1px solid lightgray;
@@ -56,8 +57,9 @@ const Right = styled.div`
 
 const MenuItem = styled.div`
   font-size: 14px;
-  cursor: <p></p>;
+  cursor: pointer;
   margin-left: 25px;
+  font-weight: 500;
 `;
 
 const Navbar = () => {
