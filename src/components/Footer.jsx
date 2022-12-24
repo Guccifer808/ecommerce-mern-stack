@@ -80,9 +80,11 @@ const Footer = () => {
       <Left>
         <Logo>SHOP.</Logo>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-          maxime, adipisci et reprehenderit voluptatibus rerum ea voluptas
-          libero enim. Perferendis!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+          consequatur corporis, beatae iusto quidem neque fugiat ipsum veritatis
+          itaque praesentium eaque provident in, mollitia dignissimos minima
+          impedit quaerat facilis perspiciatis assumenda repudiandae enim! Rem,
+          ab.
         </Description>
         <SocialsContainer>
           <SocialIcon color='3B5999'>
